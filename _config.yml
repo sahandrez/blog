@@ -1,0 +1,35 @@
+title: Explaining Stuff
+description: > # this means to ignore newlines until "baseurl:"
+  Personal blog explaning deep learning and reinforcement learning concepts. 
+permalink: ':title/'
+baseurl: "/blog" # the subpath of your site, e.g. /blog
+url: "http://sahandrez.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+site-twitter: #if your site has a twitter account, enter it here
+
+# Author Settings
+author: Sahand <br/> Rezaei-Shoshtari # add your name
+author-img: pic.jpg # add your photo
+about-author: Researcher in AI and Robotics having a shot at explaining stuff. # add description
+social-twitter: sahandrez # add your Twitter handle
+social-facebook: # add your Facebook handle
+social-github: sahandrez # add your Github handle
+social-linkedin: sahand-rezaei # add your Linkedin handle
+social-email: sahand.rezaei.sh@gmail.com # add your Email address
+
+# Disqus
+discus-identifier: mr-brown # add your discus identifier
+
+# Tracker
+analytics: # Google Analytics
+
+# Build Settings
+markdown: kramdown
+plugins:
+  - jekyll-sitemap
+  - jekyll-paginate
+  - jemoji
+
+paginate: 8
+paginate_path: "/page/:num"
+
+exclude: ["node_modules", "gulpfile.js", "package.json", "yarn.lock"]
