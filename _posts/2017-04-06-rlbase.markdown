@@ -1,7 +1,35 @@
 ---
 layout: post
 title: "Minimal RL Implementations"
-date: 2020-04-20
-description: Minimal RL implementations # Add post description (optional)
+date: 2020-04-24
+description: Minimal RL implementations
 img:  # Add image post (optional)
+tags: [Deep Reinforcement Learning, Spinning Up, RLBase]
 ---
+
+[OpenAI](https://openai.com/) has done a fantastic job with the developement of [Spinning Up](https://spinningup.openai.com/en/latest/index.html#), an educational resource for understanding Deep Reinforcement Learning (Deep RL). Its simple [code design](https://spinningup.openai.com/en/latest/user/introduction.html#code-design-philosophy), the well-documented, standalone, and reasonably good implementations of [key algorithms](https://spinningup.openai.com/en/latest/user/algorithms.html), and its [curated list](https://spinningup.openai.com/en/latest/spinningup/keypapers.html) of key papers in Deep RL have significantly lowered the barrier to entry for new researchers. Additionally, the [guide](https://spinningup.openai.com/en/latest/spinningup/spinningup.html) on spinning up as a Deep RL researcher gives a very nice overview of the common pitfalls. 
+
+While awesome RL repos such as [rllib](https://ray.readthedocs.io/en/latest/rllib.html), [Baselines](https://github.com/openai/baselines), [Dopamine](https://github.com/google/dopamine), and [rlpyt](https://github.com/astooke/rlpyt) are great for running state-of-the-art RL algorithms in large-scales, their often complicated frameworks make understaing the core concepts of Deep RL algorithms almost impossible. This is where the true benefit of simple implementations of Spinning Up come into play. 
+
+## RLBase: A Spinning Up Fork
+
+With the [PyTorch update](https://openai.com/blog/openai-pytorch/) of Spinning Up in January 2020, OpenAI has officially announced that no major updates are currently planned out. The original repo implements the following 6 core Deep RL algorithms:
+
+1. [Vanilla Policy Gradient (VPG)](https://papers.nips.cc/paper/1713-policy-gradient-methods-for-reinforcement-learning-with-function-approximation.pdf)
+1. [Trust Region Policy Optimization (TRPO)](https://arxiv.org/abs/1502.05477)
+1. [Proximal Policy Optimization (PPO)](https://arxiv.org/abs/1707.06347)
+1. [Deep Deterministic Policy Gradient (DDPG)](https://arxiv.org/abs/1509.02971)
+1. [Twin Delayed DDPG (TD3)](https://arxiv.org/pdf/1802.09477.pdf)
+1. [Soft Actor-Critic (SAC)](https://arxiv.org/abs/1801.01290)
+
+You can read more about the reasoning behind this selection [here](https://spinningup.openai.com/en/latest/user/algorithms.html#why-these-algorithms), but briefly, these are the core methods that cover the progression of ideas in the recent history of policy-learning algorithms. As the result, some of core Deep RL methods from other families such as Value Function methods, Distributional RL, Heirarchical RL, and Model-based RL have been left behind. 
+
+With that said, I have recently started working on my fork of Spinning Up, [RLBase](https://github.com/sahandrez/rlbase), with the goal of adding some of the missing algorithms. The implementations are all in [PyTorch](https://pytorch.org/) and follow the [Spinning Up code format](https://spinningup.openai.com/en/latest/user/algorithms.html#code-format). Note that this is a work in progress and more algorithms will be added in the following weeks. Additionally, I will try to write a brief description similar to that of Spinning Up in subsequent blog posts! The following algorithms have been already implemented: 
+
+1. [REINFORCE](https://link.springer.com/content/pdf/10.1007/BF00992696.pdf)
+1. [Deep Q Networks (DQN)](https://www.nature.com/articles/nature14236)
+1. [Hindsight Experience Replay (HER)](https://arxiv.org/abs/1707.01495)
+
+Similar to any code base, there may be bugs or issues with my implementations. I greatly appreciate feedbacks and pull requests. 
+
+Happy Reinforcement Learning!
